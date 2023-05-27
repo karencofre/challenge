@@ -1,0 +1,137 @@
+:root {
+  --primary-color: #003775;
+  --secondary-color: #f3f5fd;
+  --white: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--secondary-color);
+}
+.container {
+  margin: 40px 40px;
+  clear: right;
+}
+.aside-div {
+  float: right;
+}
+aside,
+aside p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--white);
+  width: 400px;
+  height: 944px;
+  border-radius: 32px;
+  padding: 0 32px;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+p.mensaje {
+  padding: 0 32px;
+  width: 400px;
+  height: 944px;
+  display: none;
+}
+.main-png {
+  margin-bottom: 32px;
+}
+strong {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+textarea {
+  max-width: 745px;
+  height: 734px;
+  padding: 16px 32px;
+  font-size: 32px;
+  font-weight: lighter;
+  color: #0a3871;
+  margin-top: 16px;
+  border-radius: 24px;
+  border: none;
+  background-color: var(--secondary-color);
+}
+.warning-msg {
+  margin: 16px 0;
+}
+button {
+  border-color: var(--primary-color);
+  border: 1px solid;
+  border-radius: 24px;
+  width: 328px;
+  height: 67px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+.btn-encrypt {
+  background-color: var(--primary-color);
+  color: var(--white);
+  margin-right: 24px;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    display: grid;
+    max-height: 933px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "buttons"
+      "aside";
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    max-width: 479px;
+    height: 48px;
+    grid-area: header;
+  }
+  .logo {
+    width: 32px;
+    height: 48px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .aside-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  aside {
+    grid-area: aside;
+    width: 328px;
+    height: 186px;
+  }
+  main {
+    grid-area: main;
+  }
+  main textarea {
+    width: 343px;
+    height: 380px;
+  }
+  .main-png {
+    display: none;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: buttons;
+  }
+  .btn-encrypt {
+    margin-right: 0;
+  }
+}
