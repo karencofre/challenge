@@ -6,15 +6,18 @@ const mensaje_s = document.querySelector(".mensaje_s");
 const aside = document.querySelector(".aside-div");
 img.style.display = "block";
 mensaje.style.display = "none";
-function validarTexto() {
+function validarTexto(event) {
+  event.preventDefault();
+
   let textoEscrito = document.querySelector(".text-area").value;
   let validador = textoEscrito.match(/^[a-z]*$/);
 
   if (!validador || validador === 0) {
     alert("Solo son permitidas letras minúsculas y sin acentos");
-    location.reload();
-    return true;
+    return false;
   }
+
+  return true;
 }
 
 function btnEncriptar() {
